@@ -60,6 +60,33 @@ BackgroundColor $EXTERNAL_SYSTEM_BG_COLOR
 BorderColor #8A8A8A
 }
 
+sprite $smallperson [24x24/16] {
+000000000000000000000000
+000000000EFFFFB000000000
+00000001FFFFFFFF00000000
+0000000FFFFFFFFFF0000000
+0000006FFFFFFFFFF0000000
+000000EFFFFFFFFFF7000000
+000000FFFFFFFFFFF8000000
+000000AFFFFFFFFFF4000000
+0000000FFFFFFFFFF0000000
+0000000BFFFFFFFF50000000
+00000000BFFFFFF500000000
+00000000007B960000000000
+000000000000000000000000
+000007FFFD6347FFFF400000
+0000FFFFFFFFFFFFFFFD0000
+000FFFFFFFFFFFFFFFFFB000
+003FFFFFFFFFFFFFFFFFF000
+00DFFFFFFFFFFFFFFFFFF600
+00FFFFFFFFFFFFFFFFFFFA00
+00FFFFFFFFFFFFFFFFFFFB00
+00FFFFFFFFFFFFFFFFFFFA00
+006FFFFFFFFFFFFFFFFFF100
+000155555555555555550000
+000000000000000000000000
+}
+
 sprite $person [48x48/16] {
 000000000000000000000000000000000000000000000000
 000000000000000000000000000000000000000000000000
@@ -129,17 +156,17 @@ endlegend
 ' ##################################
 
 !unquoted function Person($alias, $label)
-rectangle "<$person>\n==$label" <<person>> as $alias
+rectangle "<$smallperson>\n==$label" <<person>> as $alias
 !endfunction
 !unquoted function Person($alias, $label, $descr)
-rectangle "<$person>\n==$label\n\n $descr" <<person>> as $alias
+rectangle "<$smallperson>\n==$label\n\n $descr" <<person>> as $alias
 !endfunction
 
 !unquoted function Person_Ext($alias, $label)
-rectangle "<$person>\n==$label" <<external_person>> as $alias
+rectangle "<$smallperson>\n==$label" <<external_person>> as $alias
 !endfunction
 !unquoted function Person_Ext($alias, $label, $descr)
-rectangle "<$person>\n==$label\n\n $descr" <<external_person>> as $alias
+rectangle "<$smallperson>\n==$label\n\n $descr" <<external_person>> as $alias
 !endfunction
 
 !unquoted function System($alias, $label)
