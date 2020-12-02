@@ -11,6 +11,7 @@
 ' ##################################
 
 !global $CONTAINER_BG_COLOR = "#438DD5"
+!global $EXTERNAL_CONTAINER_BG_COLOR = "#999999"
 
 ' Styling
 ' ##################################
@@ -19,6 +20,13 @@ skinparam rectangle<<container>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
     BackgroundColor $CONTAINER_BG_COLOR
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor $ELEMENT_FONT_COLOR
+    FontColor $ELEMENT_FONT_COLOR
+    BackgroundColor $EXTERNAL_CONTAINER_BG_COLOR
     BorderColor #3C7FC0
 }
 
@@ -52,6 +60,13 @@ rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<container>> a
 !endfunction
 !unquoted function Container($alias, $label, $techn, $descr)
 rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<container>> as $alias
+!endfunction
+
+!unquoted function Container_Ext($alias, $label, $techn)
+rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<external_container>> as $alias
+!endfunction
+!unquoted function Container_Ext($alias, $label, $techn, $descr)
+rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<external_container>> as $alias
 !endfunction
 
 !unquoted function ContainerDb($alias, $label, $techn)
