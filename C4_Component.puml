@@ -61,3 +61,10 @@ database "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<component>> as
 !unquoted function ComponentDb($alias, $label, $techn, $descr)
 database "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<component>> as $alias
 !endfunction
+
+!unquoted function ComponentTest($alias, $label, $techn, $url)
+rectangle "[[$url]]==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<component>> as $alias
+!endfunction
+!unquoted function ComponentTest($alias, $label, $techn, $url, $descr)
+rectangle "[[$url]]==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<component>> as $alias
+!endfunction
